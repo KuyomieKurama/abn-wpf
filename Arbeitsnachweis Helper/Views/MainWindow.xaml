@@ -27,10 +27,10 @@
                 <!--Navigation-->
                 <ColumnDefinition Width="250"/>
                 <!--Content-->
-                <ColumnDefinition Width="*"/>
-                
+                <ColumnDefinition/>
+
             </Grid.ColumnDefinitions>
-            
+
             <!--Navigation-->
             <Border CornerRadius="10,0,0,10"
                     Grid.Column="0">
@@ -55,7 +55,7 @@
                                    VerticalAlignment="Center"
                                    Margin="10,0,0,0"/>
                     </StackPanel>
-                    
+
                     <!--Button-->
                     <RadioButton Style="{StaticResource mButton}"
                                  Tag="{StaticResource fontBobWhite}">
@@ -64,8 +64,29 @@
                             <TextBlock Text="Home" Style="{StaticResource mbText}"/>
                         </StackPanel>
                     </RadioButton>
+                    <RadioButton Style="{StaticResource mButton}"
+                                 Tag="{StaticResource fontBobWhite}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="CreativeCommonsSa" Style="{StaticResource mbIcon}"/>
+                            <TextBlock Text="Erstellen" Style="{StaticResource mbText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Style="{StaticResource mButton}"
+                                 Tag="{StaticResource fontBobWhite}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="CreativeCommonsSa" Style="{StaticResource mbIcon}"/>
+                            <TextBlock Text="Aus PDF" Style="{StaticResource mbText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Style="{StaticResource mButton}"
+                                 Tag="{StaticResource fontBobWhite}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="CreativeCommonsSa" Style="{StaticResource mbIcon}"/>
+                            <TextBlock Text="ABN Bearbeiten" Style="{StaticResource mbText}"/>
+                        </StackPanel>
+                    </RadioButton>
                 </StackPanel>
-                
+
             </Border>
 
 
@@ -78,6 +99,45 @@
                         <GradientStop Color="{StaticResource bobWhite}" Offset="0"/>
                     </LinearGradientBrush>
                 </Border.Background>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel x:Name="controlBar"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            FlowDirection="RightToLeft"
+                            Background="Transparent"
+                            Margin="0,0,5,0"
+                            MouseLeftButtonDown="controlBar_MouseLeftButton"
+                            MouseEnter="controlBar_MouseEnter"
+                            MouseDown="controlBar_MouseDown">
+
+                        <Button x:Name="closeBtn" 
+                                Style="{StaticResource cButton}" 
+                                Tag="{StaticResource bobRed}" 
+                                Click="closeBtn_Click">
+                            <fa:IconImage Icon="Xmark" Style="{StaticResource cButtonIcon}"/>
+                        </Button>
+                        <Button x:Name="maxBtn" 
+                                Style="{StaticResource cButton}" 
+                                Tag="{StaticResource bobRed}" 
+                                Click="maxBtn_Click">
+                            <fa:IconImage Icon="WindowMaximize" Style="{StaticResource cButtonIcon}"/>
+                        </Button>
+                        <Button x:Name="minimizeBtn" 
+                                Style="{StaticResource cButton}" 
+                                Tag="{StaticResource bobRed}" 
+                                Click="minimizeBtn_Click">
+                            <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource cButtonIcon}"/>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
             </Border>
         </Grid>
     </Border>

@@ -10,5 +10,6 @@
     <!--Font Colors-->
     <SolidColorBrush x:Key="fontBobWhite" Color="#FFFFFF"/>
     <SolidColorBrush x:Key="fontBobBlue" Color="#002F5D"/>
+    <SolidColorBrush x:Key="fontRed" Color="#B71E3F"/>
     <!--Panel Colors-->
 </ResourceDictionary>
